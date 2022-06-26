@@ -1,7 +1,13 @@
 # Effective-Kotlin
 
 
+《Effective Kotlin》的一书的翻译和代码
+
+
 ### 代码
+
+1. ...
+2. ...
 
 
 ### 文章
