@@ -88,6 +88,7 @@ Thread.sleep(1000)
 print(num) // 1000
 ```
 可变性的缺点如此之多，以至于有些语言根本不允许状态突变。 这些是纯粹的函数式语言。 一个著名的例子是 Haskell。 但是，此类语言很少用于主流开发，因为在可变性如此有限的情况下很难进行编程。可变状态是表示现实世界系统状态的一种非常有用的方式。 我建议使用可变性，但要谨慎并明智地决定我们的可变点应该在哪里。 好消息是 Kotlin 很好地支持限制可变性。
+
 **在Kotlin中限制可变性**
 Kotlin被设计用来支持限制可变性。生成不可变对象或保持属性不可变很容易。这是这种语言的许多特性和特征的结果，但最重要的是：
 
@@ -96,6 +97,7 @@ Kotlin被设计用来支持限制可变性。生成不可变对象或保持属�
 - 在data类中复制
 
 让我们一个一个讨论它们
+
 **只读属性val**
 在Kotlin中 ，我们可以让任意属性 只读val(像value)或者读写 var(像variable)。只读属性val不允许重复赋值：
 ```kotlin
@@ -173,6 +175,7 @@ fun main() {
 }
 ```
 fullName 不可能进行智能转换，因为它是使用 getter 定义的，因此它可能会在检查期间给出不同的值，并且在稍后使用期间会给出不同的值（例如，如果其他线程会设置名称）。 非本地属性只有在它们是最终的并且没有自定义 getter 时才能被智能转换。
+
 **可变集合和只读集合之间的分离**
 类似地，正如 Kotlin 将读写和只读属性分开一样，Kotlin 将读写和只读集合分开。 这要归功于集合层次结构的设计方式。 看一下在 Kotlin 中展示集合层次结构的图表。 在左侧，您可以看到只读的Iterable、Collection、Set和List接口。 这意味着他们没有任何允许修改的方法。 在右侧，您可以看到表示可变集合的 MutableIterable、MutableCollection、MutableSet 和 MutableList 接口。 请注意，每个可变接口都扩展了相应的只读接口，并添加了允许可变的方法。 这类似于属性的工作方式。 只读属性仅表示 getter，而读写属性同时表示 getter 和 setter。
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656248518700-4e7b6f95-98dd-470b-aa53-bf4439852549.png#clientId=ue384994b-4d15-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=314&id=ue28d787f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=628&originWidth=1130&originalType=binary&ratio=1&rotation=0&showTitle=false&size=392317&status=done&style=none&taskId=ud32cf7e4-9bb2-4386-92c5-3d13ca74bc0&title=&width=565)
@@ -263,7 +266,8 @@ user = user.copy(surname = "Moskała")
 print(user) // User(name=Maja, surname=Moskała)
 ```
 这是一个优雅且通用的解决方案，支持使数据模型类不可变。 当然，这种方式比只使用可变对象效率低，但它具有不可变对象的所有优点，默认情况下应该首选。
-**不同的可变点**
+
+ **不同的可变点**
 假设我们需要表示一个可变list。 我们有两种方法可以实现。 通过使用可变集合或使用读写属性 var：
 ```kotlin
 val list1: MutableList<Int> = mutableListOf()
@@ -317,7 +321,8 @@ var list3 = mutableListOf<Int>()
 我们需要同步它可以可变的两种方式（通过属性更改和内部状态更改）。 此外，由于模棱两可，使用 plus-assign 更改它是不可能的：
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656250853012-fca70780-207f-4f81-8bf2-ab66195ab05b.png#clientId=ue384994b-4d15-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=122&id=ua1d9d1f8&margin=%5Bobject%20Object%5D&name=image.png&originHeight=244&originWidth=1110&originalType=binary&ratio=1&rotation=0&showTitle=false&size=138006&status=done&style=none&taskId=u0369cf1d-d26f-4749-b5a3-41ac2e321a7&title=&width=555)
 一般规则是不应该创造不必要的方式来改变状态。 每一种改变状态的方式都是有代价的。 它需要被理解和维护。 我们更喜欢限制可变性。
-**不要泄漏可变点**
+
+ **不要泄漏可变点**
 当我们暴露一个构成状态的可变对象时，这是一种特别危险的情况。 看看这个例子：
 ```kotlin
 data class User(val name: String)
