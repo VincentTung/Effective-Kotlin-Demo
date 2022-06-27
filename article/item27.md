@@ -187,7 +187,9 @@ enum class MessageLength { SHORT, LONG }
 val messageDisplay: MessageDisplay = TestMessageDisplay()
 ```
 最后，声明与使用更加分离，因此我们可以更自由地更改实际类，如 ToastDisplay。 另一方面，如果我们想改变它的使用方式，我们就需要改变 MessageDisplay 接口和所有实现它的类。
+
 **下一个ID**
+
 让我们再讨论一个例子。 假设我们在项目中需要一个唯一的 ID。 一个非常简单的方法是拥有一个顶级属性来保存下一个 ID，并在我们需要新 ID 时递增它：
 ```kotlin
 var nextId: Int = 0 
