@@ -43,6 +43,8 @@ Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 ```
 
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656289874597-cf7828aa-eb6c-48c8-b60f-0c9c98d075ea.png#clientId=ufaee83c9-8859-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=548&id=u8d264948&margin=%5Bobject%20Object%5D&name=image.png&originHeight=548&originWidth=781&originalType=binary&ratio=1&rotation=0&showTitle=false&size=11790&status=done&style=none&taskId=u558bc906-7e94-4cb5-b7d4-502f7520065&title=&width=781)
+
+
 我们可以将这个常用算法提取成一个简单的扩展函数来显示 toast：
 ```kotlin
 fun Context.toast(
@@ -70,7 +72,9 @@ fun Context.snackbar(
 }
 ```
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656290894697-76fce173-1116-472d-9504-376432367a73.png#clientId=ufaee83c9-8859-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=519&id=u21088014&margin=%5Bobject%20Object%5D&name=image.png&originHeight=519&originWidth=585&originalType=binary&ratio=1&rotation=0&showTitle=false&size=11358&status=done&style=none&taskId=ucde0bc60-ed3c-4b50-8745-de9ac5ccc60&title=&width=585)
-这个解决方案远非完美。首先，即使只在内部使用，重命名函数也可能很危险。特别是如果其他模块依赖于这个函数。下一个问题是参数不能那么容易地自动更改，因此我们仍然坚持使用 toast API 来声明消息持续时间。这是非常有问题的。当我们显示一个snackbar 时，我们不应该依赖Toast 中的一个字段。另一方面，将所有用法更改为使用 Snackbar 的枚举也会有问题：
+
+这个解决方案远非完美。首先，即使只在内部使用，重命名函数也可能很危险。特别是如果其他模块依赖于这个函数。下一个问题是参数不能那么容易地自动更改，因此我们仍然坚持使用 toast API 来声明消息持续时间。这是非常有问题的。当我们显示一个snackbar 
+时，我们不应该依赖Toast 中的一个字段。另一方面，将所有用法更改为使用 Snackbar 的枚举也会有问题：
 
 ```kotlin
 fun Context.snackbar(
@@ -239,6 +243,7 @@ fun getNextId(): Id = Id(nextId++)
 添加新的抽象需要代码的读者学习或已经熟悉特定的概念。当我们定义另一个抽象时，这是我们项目中需要理解的另一件事。当然，当我们限制抽象可见性（第 30 条：最小化元素可见性）或定义仅用于具体任务的抽象时，问题就不那么严重了。这就是模块化在大型项目中如此重要的原因。我们需要了解定义抽象是有这个成本的，我们不应该默认抽象一切。
 我们可以无限地提取抽象，但很快这将弊大于利。这个事实在 FizzBuzz 企业版项目⁴⁴ 中被戏仿，作者表明，即使对于像 Fizz Buzz⁴⁵ 这样简单的问题，人们也可以提取大量可笑的抽象，使这个问题非常难以使用和理解。在编写本书时，共有 61 个类和 26 个接口。所有这些都是为了解决一个通常需要不到 10 行代码的问题。当然，在任何级别应用更改都很容易，但另一方面，了解这段代码的作用以及它是如何做到的却非常困难
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656290809700-64985869-ddca-45fd-8aea-cd580f2e5c9e.png#clientId=ufaee83c9-8859-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=705&id=u3a4399e4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=705&originWidth=679&originalType=binary&ratio=1&rotation=0&showTitle=false&size=134803&status=done&style=none&taskId=uffc208c1-52a9-4bb5-8fce-eeea99dc04f&title=&width=679)
+
 **FizzBuzz 企业版本类结构的一部分。 在这个项目的描述中，你可以找到讽刺的理由“这个项目是一个例子，说明如果流行的 FizzBuzz 游戏受到企业软件的高质量标准的约束，它是如何构建的。”**
 另一方面，当我们需要考虑的事情较少时，当我们使用太多抽象时，就很难理解我们行为的后果。 有人可能会使用 showMessage 函数，认为它仍然显示 toast，当它显示一个snackbar时，我们可能会感到惊讶。 看到显示了意外的 toast 消息的人可能会查找 Toast.makeText 并在查找它时遇到问题，因为它是使用 showMessage 显示的。 太多的抽象使我们的代码更难理解。 当我们不确定自己行为的后果是什么时，它也会让我们感到焦虑。
 为了理解抽象，示例非常有帮助。 文档中的单元测试或示例展示了如何使用元素，使抽象对我们来说更加真实。 出于同样的原因，我在本书中为我提出的大多数想法提供了具体的例子。 很难理解抽象的描述。 也很容易误解他们。
