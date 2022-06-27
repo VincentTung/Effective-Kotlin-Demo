@@ -245,6 +245,7 @@ fun getNextId(): Id = Id(nextId++)
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1656290809700-64985869-ddca-45fd-8aea-cd580f2e5c9e.png#clientId=ufaee83c9-8859-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=705&id=u3a4399e4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=705&originWidth=679&originalType=binary&ratio=1&rotation=0&showTitle=false&size=134803&status=done&style=none&taskId=uffc208c1-52a9-4bb5-8fce-eeea99dc04f&title=&width=679)
 
 **FizzBuzz 企业版本类结构的一部分。 在这个项目的描述中，你可以找到讽刺的理由“这个项目是一个例子，说明如果流行的 FizzBuzz 游戏受到企业软件的高质量标准的约束，它是如何构建的。”**
+
 另一方面，当我们需要考虑的事情较少时，当我们使用太多抽象时，就很难理解我们行为的后果。 有人可能会使用 showMessage 函数，认为它仍然显示 toast，当它显示一个snackbar时，我们可能会感到惊讶。 看到显示了意外的 toast 消息的人可能会查找 Toast.makeText 并在查找它时遇到问题，因为它是使用 showMessage 显示的。 太多的抽象使我们的代码更难理解。 当我们不确定自己行为的后果是什么时，它也会让我们感到焦虑。
 为了理解抽象，示例非常有帮助。 文档中的单元测试或示例展示了如何使用元素，使抽象对我们来说更加真实。 出于同样的原因，我在本书中为我提出的大多数想法提供了具体的例子。 很难理解抽象的描述。 也很容易误解他们。
 
