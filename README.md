@@ -16,6 +16,9 @@
 1. [Item1：限制可变性](/article/item1.md)
 
 
+2. [Item2：最小化变量的作用域](/article/item2.md)
+
+
 2. [Item27：使用抽象来保护代码免受更改](/article/item27.md)
 
 
