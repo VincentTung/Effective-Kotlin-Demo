@@ -1,4 +1,5 @@
 47.考虑使用inline类
+
 不仅可以内联函数，还可以用该值替换持有单个值的对象。 这种可能性在 Kotlin 1.3 中作为实验性引入，为了使其成为可能，我们需要将 inline 修饰符放在具有**单个主构造函数属性**的类之前：
 ```kotlin
 inline class Name(private val value: String) {
