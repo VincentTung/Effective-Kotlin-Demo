@@ -38,3 +38,6 @@
 
 
 8. [Item3：尽快消除平台类型](/article/item3.md)
+
+
+9. [Item4: 不要暴露推断的类型](/article/item4.md)
