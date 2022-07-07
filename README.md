@@ -35,3 +35,6 @@
 
 
 7. [Item48：消除过时的对象引用](/article/item48.md)
+
+
+8. [Item3：尽快消除平台类型](/article/item3.md)
