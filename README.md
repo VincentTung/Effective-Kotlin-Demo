@@ -47,3 +47,6 @@
 
 
 11. [Item5：明确你对参数和状态的期望](/article/item5.md)
+
+
+12.[Item7：当可能缺少返回值时，首选null返回值或者Failure返回值](/article/item7.md)
