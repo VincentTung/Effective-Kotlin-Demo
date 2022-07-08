@@ -41,3 +41,5 @@
 
 
 9. [Item4: 不要暴露推断的类型](/article/item4.md)
+
+10. [Item6：更倾向于使用标准exception，而不是自定义exception](/article/item6.md)
