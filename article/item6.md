@@ -1,0 +1,11 @@
+第6条：更倾向于使用标准exception，而不是自定义exception
+
+尽可能的使用标准库的exception类型来代替自定义类型 ，因为标注库的类型被开发者们熟知，并且可以重用。重用已有的元素能够使你的API更容易理解和学习。
+
+最常用的异常列表
+
+- IllegalArgumentException and IllegalStateException 使用 require和check函数来检查参数和状态是否符合预期的值时候会抛出
+- IndexOutOfBoundsException 一般用于数组和集合，来提示下标越界。例如 ArrayList.get(Int)的会抛出
+- ConcurrentModificationException用来提示并发修改是禁止的，并且已经检测到了这个操作
+- UnsupportedOperationException提示当前对象不支持声明的方法。当类不支持一个方法的时候，这个方法不应该出现在类中，应当避免这种情况。
+- NoSuchElementException提示请求的元素不存在。常用于例如 implement Iterable和 调用端请求next,但是没有更多元素时
