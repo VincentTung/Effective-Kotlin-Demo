@@ -58,4 +58,10 @@
 14.[Item9：使用use关闭资源](/article/item9.md)
 
 
-15.[Item10：编写单元测试](/article/item7.md)
+15.[Item10：编写单元测试](/article/item10.md)
+
+
+16.[Item11：可读性设计](/article/item11.md)
+
+
+
