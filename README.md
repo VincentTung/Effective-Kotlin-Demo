@@ -50,3 +50,12 @@
 
 
 12.[Item7：当可能缺少返回值时，首选null返回值或者Failure返回值](/article/item7.md)
+
+
+13.[Item8：恰当的处理空值](/article/item8.md)
+
+
+14.[Item9：使用use关闭资源](/article/item9.md)
+
+
+15.[Item10：编写单元测试](/article/item7.md)
