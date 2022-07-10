@@ -19,9 +19,6 @@
 2. [Item2：最小化变量的作用域](/article/item2.md)
 
 
-2. [Item27：使用抽象来保护代码免受更改](/article/item27.md)
-
-
 3. [Item31：定义文档的契约](/article/item31.md)
 
 
@@ -49,106 +46,135 @@
 11. [Item5：明确你对参数和状态的期望](/article/item5.md)
 
 
-12.[Item7：当可能缺少返回值时，首选null返回值或者Failure返回值](/article/item7.md)
+12. [Item7：当可能缺少返回值时，首选null返回值或者Failure返回值](/article/item7.md)
 
 
-13.[Item8：恰当的处理空值](/article/item8.md)
+13. [Item8：恰当的处理空值](/article/item8.md)
 
 
-14.[Item9：使用use关闭资源(简)](/article/item9.md)
+14. [Item9：使用use关闭资源(简)](/article/item9.md)
 
 
-15.[Item10：编写单元测试(简)](/article/item10.md)
+15. [Item10：编写单元测试(简)](/article/item10.md)
 
 
-16.[Item11：可读性设计](/article/item11.md)
+16. [Item11：可读性设计](/article/item11.md)
 
 
-17.[Item12:操作符的含义应该和它的函数名保持一致](/article/item12.md)
+17. [Item12:操作符的含义应该和它的函数名保持一致](/article/item12.md)
 
 
-18.[Item13:避免返回或者操作Unit?(简)](/article/item13.md)
+18. [Item13:避免返回或者操作Unit?(简)](/article/item13.md)
 
 
-19.[Item14:当变量类型不清楚的时候，请明确它的类型(简)](/article/item14.md)
+19. [Item14:当变量类型不清楚的时候，请明确它的类型(简)](/article/item14.md)
 
 
-20.[Item15:考虑显示的引用接收者receiver](/article/item15.md)
+20. [Item15:考虑显示的引用接收者receiver](/article/item15.md)
 
 
-21.[Item16:属性应该描述状态，而不是行为](/article/item16.md)
+21. [Item16:属性应该描述状态，而不是行为](/article/item16.md)
 
 
-22.[Item17:考虑具名参数(简)](/article/item17.md)
+22. [Item17:考虑具名参数(简)](/article/item17.md)
 
 
-23.[Item18:遵守编码规范(简)](/article/item18.md)
+23. [Item18:遵守编码规范(简)](/article/item18.md)
 
 
-24.[Item19:不要重复知识(简)](/article/item19.md)
+24. [Item19:不要重复知识(简)](/article/item19.md)
 
 
-25.[Item20:不要重复常用算法(简)](/article/item20.md)
+25. [Item20:不要重复常用算法(简)](/article/item20.md)
 
 
-26.[Item21:使用属性委托来提取常见的属性模式(缺)](/article/item21.md)
+26. [Item21:使用属性委托来提取常见的属性模式(缺)](/article/item21.md)
 
 
-26.[Item22:在实现通用算法的时候使用泛型(简)](/article/item22.md)
+27. [Item23:避免参数名和成员变量名重复(简)](/article/item23.md)
 
 
-27.[Item23:避免参数名和成员变量名重复(简)](/article/item23.md)
+28. [Item24:逆变和协变(简)](/article/item24.md)
 
 
-28.[Item24:逆变和协变(简)](/article/item24.md)
+29. [Item25:不同平台之间通过提取通用方法来重用(简)](/article/item25.md)
 
 
-29.[Item25:不同平台之间通过提取通用方法来重用(简)](/article/item25.md)
+30. [Item26:每个函数应该按照 单层抽象（single level of abstraction）的规则编写(简)](/article/item26.md)
 
 
-30.[Item26:每个函数应该按照 单层抽象（single level of abstraction）的规则编写(简)](/article/item26.md)
+31. [Item28:使API稳定(简)](/article/item28.md)
 
 
-31.[Item28:使API稳定(简)](/article/item28.md)
+32. [Item29:考虑包裹外部API(简)](/article/item29.md)
 
 
-32.[Item29:考虑包裹外部API(简)](/article/item29.md)
+33. [Item30:最小化元素的可见性(简)](/article/item30.md)
 
 
-33.[Item30:最小化元素的可见性(简)](/article/item30.md)
+34. [Item32:遵守抽象规范(简)](/article/item32.md)
 
 
-34.[Item32:遵守抽象规范(简)](/article/item32.md)
+35. [Item33:考虑工厂方法代替构造函数](/article/item33.md)
 
 
-35.[Item33:考虑工厂方法代替构造函数](/article/item33.md)
+36. [Item34:考虑给构造函数的参数设置默认值(简)](/article/item34.md)
 
 
-36.[Item34:考虑给构造函数的参数设置默认值(简)](/article/item34.md)
+37. [Item35:考虑为负责的对象创建定义一个DSL](/article/item35.md)
 
 
-37.[Item35:考虑为负责的对象创建定义一个DSL](/article/item35.md)
+38. [Item36:组合优于继承(简)](/article/item36.md)
 
 
-38.[Item36:组合优于继承(简)](/article/item36.md)
+39. [Item37:使用data修饰符来修饰数据集(简)](/article/item37.md)
 
 
-39.[Item37:使用data修饰符来修饰数据集(简)](/article/item37.md)
+40. [Item38:使用函数类型来替代接口传递操作(简)](/article/item38.md)
 
 
-40.[Item38:使用函数类型来替代接口传递操作(简)](/article/item38.md)
+41. [Item39:更喜欢类层次结构而不是标记类(缺)](/article/item39.md)
 
 
-41.[Item39:更喜欢类层次结构而不是标记类(缺)](/article/item39.md)
+42. [Item40:遵守equals的约定(简)](/article/item40.md)
 
 
-42.[Item40:遵守equals的约定(简)](/article/item40.md)
+43. [Item41:遵守hashcode的约定(简)](/article/item41.md)
 
 
-43.[Item41:遵守hashcode的约定(简)](/article/item41.md)
+44. [Item42:遵守compareTo的约定(简)](/article/item42.md)
 
 
-44.[Item42:遵守compareTo的约定(简)](/article/item42.md)
+45. [Item43:考虑提取api中的不必要部分到extensions中(简)](/article/item43.md)
 
 
-45.[Item43:考虑提取api中的不必要部分到extensions中(简)](/article/item43.md)
+46. [Item49:数据多次操作的时候使用Sequence(简)](/article/item44.md)
+
+
+47. [Item50:限制collection的操作次数(简)](/article/item50.md)
+
+
+48. [Item51:考虑使用原始的数组来应对需要高性能的情况(简)](/article/item51.md)
+
+
+49. [Item52:考虑使用可变的collections(缺)](/article/item52.md)
+
+
+50. [Item44:避免在类中定义扩展函数(缺)](/article/item44.md)
+
+
+51. [Item27：使用抽象来保护代码免受更改](/article/item27.md)
+
+
+52. [Item22:在实现通用算法的时候使用泛型(简)](/article/item22.md)
+
+
+
+
+
+
+
+
+
+
+
