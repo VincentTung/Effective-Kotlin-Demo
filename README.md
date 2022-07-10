@@ -55,16 +55,25 @@
 13.[Item8：恰当的处理空值](/article/item8.md)
 
 
-14.[Item9：使用use关闭资源](/article/item9.md)
+14.[Item9：使用use关闭资源(简)](/article/item9.md)
 
 
-15.[Item10：编写单元测试](/article/item10.md)
+15.[Item10：编写单元测试(简)](/article/item10.md)
 
 
 16.[Item11：可读性设计](/article/item11.md)
 
 
 17.[Item12:操作符的含义应该和它的函数名保持一致](/article/item12.md)
+
+
+18.[Item13:避免返回或者操作Unit?(简)](/article/item13.md)
+
+
+19.[Item14:当变量类型不清楚的时候，请明确它的类型(简)](/article/item14.md)
+
+
+20.[Item15:考虑显示的引用接收者receiver](/article/item15.md)
 
 
 
