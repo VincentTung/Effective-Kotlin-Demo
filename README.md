@@ -130,5 +130,25 @@
 37.[Item35:考虑为负责的对象创建定义一个DSL](/article/item35.md)
 
 
-38.[Item36:(简)](/article/item36.md)
+38.[Item36:组合优于继承(简)](/article/item36.md)
 
+
+39.[Item37:使用data修饰符来修饰数据集(简)](/article/item37.md)
+
+
+40.[Item38:使用函数类型来替代接口传递操作(简)](/article/item38.md)
+
+
+41.[Item39:更喜欢类层次结构而不是标记类(缺)](/article/item39.md)
+
+
+42.[Item40:遵守equals的约定(简)](/article/item40.md)
+
+
+43.[Item41:遵守hashcode的约定(简)](/article/item41.md)
+
+
+44.[Item42:遵守compareTo的约定(简)](/article/item42.md)
+
+
+45.[Item43:考虑提取api中的不必要部分到extensions中(简)](/article/item43.md)
