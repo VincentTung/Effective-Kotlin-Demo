@@ -97,7 +97,7 @@ infix fun String.and(s: String) = this + s
 ```
 这段代码违反很多规则：
 
-- 违反了操作符的含义-invoke不能这用使用。一个String不能被invoke
+- 违反了操作符的含义-invoke不能这么使用。一个String不能被invoke
 - "lamda as the last argument"规则的使用是令人疑惑的。它用在函数后面没问题，但是在和invoke操作符配合的时候应该非常小心。
 - kotlin已经有支持String拼接的语言特性，无需重复造轮子
 
