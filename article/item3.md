@@ -10,8 +10,8 @@ public class JavaTest {
     } 
 }
 ```
-人们可能会说应该把它看做是可空类型。这是一种安全的做法，因为在Java中，任何东西都是可空的。然而，我们经常知道一些东西不是null,所以需要代码中的很多地方在尾部使用不为空的符号！！。
-真正的问题是什么时候我们需要从Java中获取泛型。假设一个Java API返回了 一个List<User>,且没有注解。如果Kotlin默认假设是可空的类型，我们又知道list和这些user不是空的，那么不仅需要使用！！，还要过滤空值：
+人们可能会说应该把它看做是可空类型。这是一种安全的做法，因为在Java中，任何东西都是可空的。然而，我们经常知道一些东西不是null,所以需要代码中的很多地方在尾部使用不为空的符号!!。
+真正的问题是什么时候我们需要从Java中获取泛型。假设一个Java API返回了 一个List<User>,且没有注解。如果Kotlin默认假设是可空的类型，我们又知道list和这些user不是空的，那么不仅需要使用!!，还要过滤空值：
 ```java
  // Java
 public class UserRepo { 
@@ -25,7 +25,7 @@ public class UserRepo {
 // Kotlin
 val users: List<User> = UserRepo().users!!.filterNotNull()
 ```
-如果换成是一个函数返回的是一个List<List<User>>呢？
+如果换成是一个函数返回的是一个List<List<User>>呢?
 情况变得复杂了：
 ```kotlin
 val users: List<List<User>> = UserRepo().groupedUsers!!.map { it!!.filterNotNull() }
@@ -34,7 +34,7 @@ List至少有像map和filterNotNull的函数。其他泛型，可空性(nullabil
 
 **平台类型**-来自另外一种语言的类型且具有未知的可空性。
 
-平台类型被单个感叹号标记 ！，在类型后面，比如 String!。可是这种标记不能用于代码中。平台类型是无指示性的-意思是不能在语言中明确的把它们写下来。当一个平台类型赋值给了一个Kotlin的变量或者属性时，它可以被推断出来，但是不能被明确的设置。反而，我们可以选择期望的类型：可空类型或者不可空类型.
+平台类型被单个感叹号标记!，在类型后面，比如 String!。可是这种标记不能用于代码中。平台类型是无指示性的-意思是不能在语言中明确的把它们写下来。当一个平台类型赋值给了一个Kotlin的变量或者属性时，它可以被推断出来，但是不能被明确的设置。反而，我们可以选择期望的类型：可空类型或者不可空类型.
 ```java
 // Java
 public class UserRepo { 
@@ -80,7 +80,7 @@ public class UserRepo {
 - Lombok (@NonNull from lombok)
 
 或者，你可以使用 using JSR 305的@ParametersAreNonnullByDefault 的注解指定在Java所有的类型默认都是不为空的。
-在Kotlin代码中，同样也有一件事情可以做。出于安全的原因，我推荐尽可能快的剔除平台类型。为了理解为什么，思考一下stateType和platformType函数在例子中的不同处：
+在Kotlin代码中，同样也有一件事情可以做。出于安全的原因，我推荐尽可能快的剔除平台类型。为了理解为什么，思考一下statedType和platformType函数在例子中的不同处：
 ```java
  // Java
 public class JavaClass {
@@ -104,7 +104,7 @@ fun platformType() {
 }
 ```
 上面的两种情况，开发者都假设getValue不会返回空值，但是这是错误的。结果是两个函数都会出现NPE,但是两个发生错误的地方却有不同。
-在stateType中，NPE将会在我们从Java获取值的同一个被抛出。这很明显，错误的声明了一个不为空的类型，且拿到了空值。只需要修改它，调整剩余的代码部分。
+在statedType中，NPE将会在我们从Java获取值的同一个被抛出。这很明显，错误的声明了一个不为空的类型，且拿到了空值。只需要修改它，调整剩余的代码部分。
 在platformType中，NPE将在我们把值当做不为空来使用的时候抛出。可能是从一些更复杂的表达式的中间部分开始的。被当做是平台类型的变量可以被当做可空、亦或不可空来对待。这种变量可能前几次使用是安全的，然后就变得不安全，抛出了NPE.当我们使用这种属性的时候，类型系统并不能帮助我们。Java中也是同样的情况，但是在Kotlin中我们并不希望在使用一个对象的时候可能会产生NPE。很有可能有人迟早会不安全的使用它，最后因为一个运行时的异常而停止，而导致这些的原因也可能不会轻易被发现。
 ```kotlin
 // Java
@@ -151,9 +151,9 @@ fun main() {
     print("User name length is ${text.length}")
 }
 ```
-传播平台类型是造成灾难的根源。这将是有问题的，出于安全，应该尽可能的剔除出去。这种情况，IDEA Intellij用一个warning来帮助我们：
+传递平台类型是造成灾难的根源。这将是有问题的，出于安全，应该尽可能的剔除出去。这种情况，IDEA Intellij用一个warning来帮助我们：
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/10378482/1655542189060-3e1cc09e-2ce2-46e6-92e4-462752cd411c.png#clientId=uf1e4d90f-2da5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=78&id=euH9K&margin=%5Bobject%20Object%5D&name=image.png&originHeight=97&originWidth=925&originalType=binary&ratio=1&rotation=0&showTitle=false&size=29321&status=done&style=none&taskId=ubbeec932-a16b-4b90-9f66-d1b51686718&title=&width=740)
 
 **总结：**
 
-来自另一种语言的类型拥有位置的可空性，被称作是平台类型。由于它们是危险的，我们应该尽可能的剔除它们，不能传播它们。在暴露的Java中的构造函数、方法、变量中使用注解来指定可空性，也是很好的做法。这对使用这些元素的Java和Kotlin开发者来说都将是宝贵的信息。
+来自另一种语言的类型拥有未知的可空性，被称作是平台类型。由于它们是危险的，我们应该尽可能的剔除它们，不能传递它们。在暴露的Java中的构造函数、方法、变量中使用注解来指定可空性，也是很好的做法。这对使用这些元素的Java和Kotlin开发者来说都将是宝贵的信息。
