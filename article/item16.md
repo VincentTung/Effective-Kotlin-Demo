@@ -1,6 +1,6 @@
 16.属性应该描述状态，而不是行为
 
-kotlin的属性看起来和java的成员变量相似，但是确代表了不同的概念
+kotlin的属性看起来和java的成员变量相似，但是却代表了不同的概念
 ```kotlin
 //var类型 读写属性， 有setter getter方法，通过filed指向这个属性存储的数据
 var name: String? = null
